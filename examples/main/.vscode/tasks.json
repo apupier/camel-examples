@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Camel application with debug Profile",
+			"type": "shell",
+			"command": "mvn",
+			"args": [
+				"camel:run",
+				"-Pcamel.debug" // This depends on your project. The goal here is to have camel-debug on the classpath.
+			],
+			"problemMatcher": { // Problem matcher is mandatory to avoid a dialog warning on each launch but cannot find a good way to configure it
+				"owner": "camel",
+				"pattern": {
+					"regexp": "^.*$" 				
+				},
+				"severity": "error",	
+				"source": "maven",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^.*$",
+					"endsPattern": "^.*$"
+				}
+			},
+			"presentation": {
+				"reveal": "always"
+			},
+			"isBackground": true // Must be set as background as the Maven commands doesn't return until the Camel application stops. 
+		}
+		
+	]
+}

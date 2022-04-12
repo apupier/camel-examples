@@ -1,0 +1,12 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run with Camel Debugger",
+			"type": "apache.camel",
+			"request": "attach",
+			"preLaunchTask": "Run Camel application with debug Profile",
+			//"postDebugTask": "Find a way to stop the Camel application"
+		}
+	]
+}
