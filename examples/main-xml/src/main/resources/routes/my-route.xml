@@ -19,7 +19,7 @@
 -->
 <routes id="camel" xmlns="http://camel.apache.org/schema/spring">
     <route id="foo">
-        <from uri="quartz:foo?cron={{myCron}}"/>
+        <from uri="timer:foo"/>
         <bean ref="myBean" method="hello"/>
         <log message="${body}"/>
         <bean ref="myBean" method="bye"/>

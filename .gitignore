@@ -7,7 +7,6 @@ target
 .classpath
 .ekstazi
 .project
-.settings
 .checkstyle
 *.log
 test-salesforce-login.properties

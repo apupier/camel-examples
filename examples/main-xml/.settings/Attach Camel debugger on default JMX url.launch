@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.github.camel-tooling.dap.eclipse.client.launchConfigurationType">
+    <booleanAttribute key="org.eclipse.lsp4e.debug.model.ATTR_CUSTOM_DEBUG_ADAPTER" value="false"/>
+    <booleanAttribute key="org.eclipse.lsp4e.debug.model.ATTR_CUSTOM_LAUNCH_PARAMS" value="false"/>
+    <listAttribute key="org.eclipse.lsp4e.debug.model.ATTR_DSP_ARGS">
+        <listEntry value="-jar"/>
+        <listEntry value="/home/apupier/eclipse/committers-2022-03/eclipse/../../../.p2/pool/plugins/com.github.camel-tooling.dap.eclipse.client_0.0.1.202204150741/libs/camel-dap-server-0.2.0-SNAPSHOT.jar"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.lsp4e.debug.model.ATTR_DSP_CMD" value="java"/>
+    <stringAttribute key="org.eclipse.lsp4e.debug.model.ATTR_DSP_MODE" value="launch server"/>
+    <booleanAttribute key="org.eclipse.lsp4e.debug.model.ATTR_DSP_MONITOR_ADAPTER" value="true"/>
+    <stringAttribute key="org.eclipse.lsp4e.debug.model.ATTR_DSP_PARAM" value="{&#10;&quot;request&quot;: &quot;attach&quot;&#10;}"/>
+</launchConfiguration>
