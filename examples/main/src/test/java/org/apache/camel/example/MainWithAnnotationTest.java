@@ -22,6 +22,7 @@ import org.apache.camel.BeanInject;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.NotifyBuilder;
 import org.apache.camel.test.main.junit5.CamelMainTest;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,17 +31,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * A unit test using the annotation based approach checking that Camel supports binding via annotations.
  */
 @CamelMainTest(mainClass = MyApplication.class)
+@Disabled
 class MainWithAnnotationTest {
 
     @BeanInject
     CamelContext context;
 
     @Test
-    void should_support_binding_via_annotations() {
+    void should_support_binding_via_annotations() throws Exception {
         NotifyBuilder notify = new NotifyBuilder(context)
             .whenCompleted(1).whenBodiesDone("Bye World").create();
         assertTrue(
             notify.matches(20, TimeUnit.SECONDS), "1 message should be completed"
         );
     }
+	
 }

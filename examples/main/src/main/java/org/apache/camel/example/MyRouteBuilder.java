@@ -22,10 +22,10 @@ public class MyRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("quartz:foo?cron={{myCron}}").routeId("foo")
-            .bean("myBean", "hello")
-            .log("${body}")
-            .bean("myBean", "bye")
-            .log("${body}");
+        from("direct:demo").routeId("foo")
+        	.bean("myBean", "hello")
+        	.log("${body}")
+        	.bean("myBean", "bye")
+        	.log("${body}");
     }
 }

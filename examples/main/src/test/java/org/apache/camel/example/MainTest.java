@@ -27,14 +27,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * A unit test using the legacy approach checking that Camel supports binding via annotations.
  */
+//@Disabled
 class MainTest extends CamelMainTestSupport {
 
     @Test
-    void should_support_binding_via_annotations() {
+    void should_support_binding_via_annotations() throws Exception {
+		Thread.sleep(2000);
+		template.asyncSendBody("direct:demo", "");
         NotifyBuilder notify = new NotifyBuilder(context)
             .whenCompleted(1).whenBodiesDone("Bye World").create();
         assertTrue(
-            notify.matches(20, TimeUnit.SECONDS), "1 message should be completed"
+            notify.matches(60, TimeUnit.SECONDS), "1 message should be completed"
         );
     }
 
@@ -42,4 +45,16 @@ class MainTest extends CamelMainTestSupport {
     protected Class<?> getMainClass() {
         return MyApplication.class;
     }
+		
+	@Override
+	protected boolean useJmx() {
+		return true;
+	}
+	
+	// Can be omitted as default implementation is returnign false but writing it to emphasize that it must return false
+	@Override
+	public boolean isUseDebugger() {
+		return false;
+	}
+	
 }
