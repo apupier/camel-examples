@@ -34,7 +34,7 @@ class MainTest extends CamelMainTestSupport {
         NotifyBuilder notify = new NotifyBuilder(context)
             .whenCompleted(1).whenBodiesDone("Bye World").create();
         assertTrue(
-            notify.matches(20, TimeUnit.SECONDS), "1 message should be completed"
+            notify.matches(200, TimeUnit.SECONDS), "1 message should be completed"
         );
     }
 
